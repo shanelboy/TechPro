@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Lab1_simpleCalculator
 {
-    public partial class Form1 : Form
+    public partial class SimpleCalculator : Form
     {
-        public Form1()
+        public SimpleCalculator()
         {
             InitializeComponent();
         }
