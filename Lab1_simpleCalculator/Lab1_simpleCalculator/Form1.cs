@@ -21,5 +21,10 @@ namespace Lab1_simpleCalculator
         {
             
         }
+
+        private void buttonOne_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
