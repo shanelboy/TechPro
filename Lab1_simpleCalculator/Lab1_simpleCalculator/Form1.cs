@@ -19,7 +19,7 @@ namespace Lab1_simpleCalculator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ///can you see this now?
+            ///changed again
         }
     }
 }
