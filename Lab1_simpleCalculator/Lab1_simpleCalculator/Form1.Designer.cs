@@ -63,6 +63,7 @@
             this.textBox_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_number.Location = new System.Drawing.Point(50, 24);
             this.textBox_number.Name = "textBox_number";
+            this.textBox_number.ReadOnly = true;
             this.textBox_number.Size = new System.Drawing.Size(789, 44);
             this.textBox_number.TabIndex = 2;
             this.textBox_number.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -111,6 +112,7 @@
             this.buttonThree.TabIndex = 8;
             this.buttonThree.Text = "3";
             this.buttonThree.UseVisualStyleBackColor = true;
+            this.buttonThree.Click += new System.EventHandler(this.buttonThree_Click);
             // 
             // buttonTwo
             // 
@@ -122,6 +124,7 @@
             this.buttonTwo.TabIndex = 7;
             this.buttonTwo.Text = "2";
             this.buttonTwo.UseVisualStyleBackColor = true;
+            this.buttonTwo.Click += new System.EventHandler(this.buttonTwo_Click);
             // 
             // buttonOne
             // 
@@ -133,6 +136,7 @@
             this.buttonOne.TabIndex = 6;
             this.buttonOne.Text = "1";
             this.buttonOne.UseVisualStyleBackColor = true;
+            this.buttonOne.Click += new System.EventHandler(this.buttonOne_Click);
             // 
             // buttonNine
             // 
@@ -144,6 +148,7 @@
             this.buttonNine.TabIndex = 14;
             this.buttonNine.Text = "9";
             this.buttonNine.UseVisualStyleBackColor = true;
+            this.buttonNine.Click += new System.EventHandler(this.buttonNine_Click);
             // 
             // buttonEight
             // 
@@ -155,6 +160,7 @@
             this.buttonEight.TabIndex = 13;
             this.buttonEight.Text = "8";
             this.buttonEight.UseVisualStyleBackColor = true;
+            this.buttonEight.Click += new System.EventHandler(this.buttonEight_Click);
             // 
             // buttonSeven
             // 
@@ -166,6 +172,7 @@
             this.buttonSeven.TabIndex = 12;
             this.buttonSeven.Text = "7";
             this.buttonSeven.UseVisualStyleBackColor = true;
+            this.buttonSeven.Click += new System.EventHandler(this.buttonSeven_Click);
             // 
             // buttonSix
             // 
@@ -177,6 +184,7 @@
             this.buttonSix.TabIndex = 11;
             this.buttonSix.Text = "6";
             this.buttonSix.UseVisualStyleBackColor = true;
+            this.buttonSix.Click += new System.EventHandler(this.buttonSix_Click);
             // 
             // buttonFive
             // 
@@ -188,6 +196,7 @@
             this.buttonFive.TabIndex = 10;
             this.buttonFive.Text = "5";
             this.buttonFive.UseVisualStyleBackColor = true;
+            this.buttonFive.Click += new System.EventHandler(this.buttonFive_Click);
             // 
             // buttonFour
             // 
@@ -199,6 +208,7 @@
             this.buttonFour.TabIndex = 9;
             this.buttonFour.Text = "4";
             this.buttonFour.UseVisualStyleBackColor = true;
+            this.buttonFour.Click += new System.EventHandler(this.buttonFour_Click);
             // 
             // panelNumbers
             // 
@@ -228,12 +238,13 @@
             this.Controls.Add(this.panelNumbers);
             this.Controls.Add(this.buttonOn);
             this.Controls.Add(this.textBox_number);
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SimpleCalculator";
             this.Text = "SimpleCalculator";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Calculator_Load);
             this.panelNumbers.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
