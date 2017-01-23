@@ -79,6 +79,13 @@ namespace Lab1_simpleCalculator
             {
                 textBox_number.Text += "9";
             }
+            if (e.KeyCode == Keys.Back)
+            {
+                if (textBox_number.Text.Length > 0)
+                {
+                    textBox_number.Text = textBox_number.Text.Substring(0, textBox_number.Text.Length - 1);
+                }
+            }
         }
 
         private void buttonOn_Click(object sender, EventArgs e)
