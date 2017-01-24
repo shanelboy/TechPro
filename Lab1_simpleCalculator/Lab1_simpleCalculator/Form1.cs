@@ -34,62 +34,66 @@ namespace Lab1_simpleCalculator
         private void Calculator_Load(object sender, EventArgs e)
         {
             this.KeyDown += new KeyEventHandler(Calculator_KeyDown);
+            this.KeyPress += new KeyPressEventHandler(Calculator_KeyPress);
         }
-
 
         private void Calculator_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.D0)
-            {
-                textBox_number.Text += "0";
-            }
-            if (e.KeyCode == Keys.D1)
-            {
-                textBox_number.Text += "1";
-            }
-            if (e.KeyCode == Keys.D2)
-            {
-                textBox_number.Text += "2";
-            }
-            if (e.KeyCode == Keys.D3)
-            {
-                textBox_number.Text += "3";
-            }
-            if (e.KeyCode == Keys.D4)
-            {
-                textBox_number.Text += "4";
-            }
-            if (e.KeyCode == Keys.D5)
-            {
-                textBox_number.Text += "5";
-            }
-            if (e.KeyCode == Keys.D6)
-            {
-                textBox_number.Text += "6";
-            }
-            if (e.KeyCode == Keys.D7)
-            {
-                textBox_number.Text += "7";
-            }
-            if (e.KeyCode == Keys.NumPad8)
-            {
-                textBox_number.Text += "8";
-            }
-            if (e.KeyCode == Keys.D9)
-            {
-                textBox_number.Text += "9";
-            }
-            if (e.KeyCode == Keys.OemPeriod)
-            {
-                if (!(textBox_number.Text.Contains(".")))
-                    textBox_number.Text += ".";
-            }
-            if (e.KeyCode == Keys.Back)
+            if (e.KeyCode == Keys.OemBackslash)
             {
                 if (textBox_number.Text.Length > 0)
                 {
                     textBox_number.Text = textBox_number.Text.Substring(0, textBox_number.Text.Length - 1);
                 }
+            }
+        }
+
+        private void Calculator_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '0')
+            {
+                textBox_number.Text += "0";
+            }
+            if (e.KeyChar == '1')
+            {
+                textBox_number.Text += "1";
+            }
+            if (e.KeyChar == '2')
+            {
+                textBox_number.Text += "2";
+            }
+            if (e.KeyChar == '3')
+            {
+                textBox_number.Text += "3";
+            }
+            if (e.KeyChar == '4')
+            {
+                textBox_number.Text += "4";
+            }
+            if (e.KeyChar == '5')
+            {
+                textBox_number.Text += "5";
+            }
+            if (e.KeyChar == '6')
+            {
+                textBox_number.Text += "6";
+            }
+            if (e.KeyChar == '7')
+            {
+                textBox_number.Text += "7";
+            }
+            if (e.KeyChar == '8')
+            {
+                textBox_number.Text += "8";
+            }
+            if (e.KeyChar == '9')
+            {
+                textBox_number.Text += "9";
+            }
+            if (e.KeyChar == '.')
+            {
+                if (!(textBox_number.Text.Contains(".")))
+                    textBox_number.Text += ".";
             }
         }
 
@@ -182,13 +186,7 @@ namespace Lab1_simpleCalculator
         {
             SendKeys.Send("/");
         }
-        /// <summary>
-        /// I couldn't figure out how to differentiate "*" with "8" when sending keys,
-        /// so I decide to implement all the operator seperately without sending the keys to key event handler.
-        /// -Bill
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void buttonMulti_Click(object sender, EventArgs e)
         {
             SendKeys.Send("*");
