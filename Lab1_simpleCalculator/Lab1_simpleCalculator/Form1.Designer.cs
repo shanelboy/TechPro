@@ -46,7 +46,6 @@
             this.buttonEquals = new System.Windows.Forms.Button();
             this.buttonBackSpc = new System.Windows.Forms.Button();
             this.buttonClearAll = new System.Windows.Forms.Button();
-            this.buttonClear = new System.Windows.Forms.Button();
             this.buttonMulti = new System.Windows.Forms.Button();
             this.buttonDivide = new System.Windows.Forms.Button();
             this.buttonPlus = new System.Windows.Forms.Button();
@@ -54,6 +53,7 @@
             this.textBox_memory = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.buttonCE = new System.Windows.Forms.Button();
             this.panelNumbers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -75,7 +75,7 @@
             // 
             this.textBox_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_number.Location = new System.Drawing.Point(64, 122);
-            this.textBox_number.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_number.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_number.Name = "textBox_number";
             this.textBox_number.ReadOnly = true;
             this.textBox_number.Size = new System.Drawing.Size(784, 56);
@@ -228,10 +228,10 @@
             // 
             // panelNumbers
             // 
+            this.panelNumbers.Controls.Add(this.buttonCE);
             this.panelNumbers.Controls.Add(this.buttonEquals);
             this.panelNumbers.Controls.Add(this.buttonBackSpc);
             this.panelNumbers.Controls.Add(this.buttonClearAll);
-            this.panelNumbers.Controls.Add(this.buttonClear);
             this.panelNumbers.Controls.Add(this.buttonMulti);
             this.panelNumbers.Controls.Add(this.buttonDivide);
             this.panelNumbers.Controls.Add(this.buttonPlus);
@@ -249,7 +249,7 @@
             this.panelNumbers.Controls.Add(this.buttonSeven);
             this.panelNumbers.Controls.Add(this.buttonSix);
             this.panelNumbers.Location = new System.Drawing.Point(31, 318);
-            this.panelNumbers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelNumbers.Margin = new System.Windows.Forms.Padding(4);
             this.panelNumbers.Name = "panelNumbers";
             this.panelNumbers.Size = new System.Drawing.Size(817, 459);
             this.panelNumbers.TabIndex = 15;
@@ -292,19 +292,6 @@
             this.buttonClearAll.Text = "C";
             this.buttonClearAll.UseVisualStyleBackColor = true;
             this.buttonClearAll.Click += new System.EventHandler(this.buttonC_Click);
-            // 
-            // buttonClear
-            // 
-            this.buttonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClear.ForeColor = System.Drawing.Color.Red;
-            this.buttonClear.Location = new System.Drawing.Point(680, 20);
-            this.buttonClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(105, 66);
-            this.buttonClear.TabIndex = 23;
-            this.buttonClear.Text = "CE";
-            this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.buttonC_Click);
             // 
             // buttonMulti
             // 
@@ -358,7 +345,7 @@
             // 
             this.textBox_memory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_memory.Location = new System.Drawing.Point(64, 32);
-            this.textBox_memory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_memory.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_memory.Name = "textBox_memory";
             this.textBox_memory.ReadOnly = true;
             this.textBox_memory.Size = new System.Drawing.Size(784, 56);
@@ -387,6 +374,18 @@
             this.pictureBox2.Size = new System.Drawing.Size(283, 286);
             this.pictureBox2.TabIndex = 18;
             this.pictureBox2.TabStop = false;
+            // 
+            // buttonCE
+            // 
+            this.buttonCE.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCE.ForeColor = System.Drawing.Color.Red;
+            this.buttonCE.Location = new System.Drawing.Point(680, 25);
+            this.buttonCE.Name = "buttonCE";
+            this.buttonCE.Size = new System.Drawing.Size(104, 60);
+            this.buttonCE.TabIndex = 27;
+            this.buttonCE.Text = "CE";
+            this.buttonCE.UseVisualStyleBackColor = true;
+            this.buttonCE.Click += new System.EventHandler(this.buttonCE_Click);
             // 
             // SimpleCalculator
             // 
@@ -441,7 +440,7 @@
         private System.Windows.Forms.Button buttonEquals;
         private System.Windows.Forms.Button buttonBackSpc;
         private System.Windows.Forms.Button buttonClearAll;
-        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonCE;
     }
 }
 

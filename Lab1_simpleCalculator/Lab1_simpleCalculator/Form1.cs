@@ -217,10 +217,6 @@ namespace Lab1_simpleCalculator
             SendKeys.Send("+");
         }
 
-        private void buttonCE_Click(object sender, EventArgs e)
-        {
-            SendKeys.Send("sqrt");
-        }
 
         private void buttonEquals_Click(object sender, EventArgs e)
         {
@@ -246,6 +242,12 @@ namespace Lab1_simpleCalculator
         {
             SendKeys.Send("-");
         }
+
+        private void buttonCE_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e) {}
 
     }
