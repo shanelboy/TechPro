@@ -222,7 +222,7 @@ namespace Lab1_simpleCalculator
 
         private void squared_Click(object sender, EventArgs e)
         {
-            SendKeys.Send("sqrt");
+            SendKeys.Send("^2");
         }
 
         private void buttonSQRT_Click(object sender, EventArgs e)
