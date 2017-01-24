@@ -49,10 +49,10 @@
             this.buttonClearAll = new System.Windows.Forms.Button();
             this.buttonMulti = new System.Windows.Forms.Button();
             this.buttonDivide = new System.Windows.Forms.Button();
-            this.buttonPlus = new System.Windows.Forms.Button();
             this.buttonMinus = new System.Windows.Forms.Button();
             this.textBox_memory = new System.Windows.Forms.TextBox();
             this.buttonCE = new System.Windows.Forms.Button();
+            this.buttonPlus = new System.Windows.Forms.Button();
             this.panelNumbers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -226,6 +226,7 @@
             // 
             // panelNumbers
             // 
+            this.panelNumbers.Controls.Add(this.buttonPlus);
             this.panelNumbers.Controls.Add(this.buttonCE);
             this.panelNumbers.Controls.Add(this.pictureBox1);
             this.panelNumbers.Controls.Add(this.buttonEquals);
@@ -233,7 +234,6 @@
             this.panelNumbers.Controls.Add(this.buttonClearAll);
             this.panelNumbers.Controls.Add(this.buttonMulti);
             this.panelNumbers.Controls.Add(this.buttonDivide);
-            this.panelNumbers.Controls.Add(this.buttonPlus);
             this.panelNumbers.Controls.Add(this.buttonMinus);
             this.panelNumbers.Controls.Add(this.buttonThree);
             this.panelNumbers.Controls.Add(this.buttonSign);
@@ -328,18 +328,6 @@
             this.buttonDivide.UseVisualStyleBackColor = true;
             this.buttonDivide.Click += new System.EventHandler(this.buttonDivide_Click);
             // 
-            // buttonPlus
-            // 
-            this.buttonPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPlus.Location = new System.Drawing.Point(557, 20);
-            this.buttonPlus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonPlus.Name = "buttonPlus";
-            this.buttonPlus.Size = new System.Drawing.Size(105, 66);
-            this.buttonPlus.TabIndex = 18;
-            this.buttonPlus.Text = "+";
-            this.buttonPlus.UseVisualStyleBackColor = true;
-            this.buttonPlus.Click += new System.EventHandler(this.buttonPlus_Click);
-            // 
             // buttonMinus
             // 
             this.buttonMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -374,6 +362,17 @@
             this.buttonCE.Text = "CE";
             this.buttonCE.UseVisualStyleBackColor = true;
             this.buttonCE.Click += new System.EventHandler(this.buttonCE_Click_1);
+            // 
+            // buttonPlus
+            // 
+            this.buttonPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPlus.Location = new System.Drawing.Point(557, 20);
+            this.buttonPlus.Name = "buttonPlus";
+            this.buttonPlus.Size = new System.Drawing.Size(105, 65);
+            this.buttonPlus.TabIndex = 28;
+            this.buttonPlus.Text = "+";
+            this.buttonPlus.UseVisualStyleBackColor = true;
+            this.buttonPlus.Click += new System.EventHandler(this.buttonPlus_Click_1);
             // 
             // SimpleCalculator
             // 
@@ -418,12 +417,12 @@
         private System.Windows.Forms.TextBox textBox_memory;
         private System.Windows.Forms.Button buttonMulti;
         private System.Windows.Forms.Button buttonDivide;
-        private System.Windows.Forms.Button buttonPlus;
         private System.Windows.Forms.Button buttonMinus;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonEquals;
         private System.Windows.Forms.Button buttonBackSpc;
         private System.Windows.Forms.Button buttonClearAll;
         private System.Windows.Forms.Button buttonCE;
+        private System.Windows.Forms.Button buttonPlus;
     }
 }

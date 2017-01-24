@@ -311,12 +311,6 @@ namespace Lab1_simpleCalculator
             checkOperation('*');
         }
 
-        private void buttonPlus_Click(object sender, EventArgs e)
-        {
-            SendKeys.Send("+");
-            checkOperation('+');
-        }
-
         private void buttonEquals_Click(object sender, EventArgs e)
         {
             checkOperation('=');
@@ -333,6 +327,12 @@ namespace Lab1_simpleCalculator
         private void buttonCE_Click_1(object sender, EventArgs e)
         {
             textBox_number.Text = string.Empty;
+        }
+
+        private void buttonPlus_Click_1(object sender, EventArgs e)
+        {
+            SendKeys.Send("+");
+            checkOperation('+');
         }
 
         private void buttonC_Click(object sender, EventArgs e)
