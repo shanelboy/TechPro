@@ -43,11 +43,15 @@
             this.buttonFive = new System.Windows.Forms.Button();
             this.buttonFour = new System.Windows.Forms.Button();
             this.panelNumbers = new System.Windows.Forms.Panel();
-            this.textBox_memory = new System.Windows.Forms.TextBox();
             this.buttonMulti = new System.Windows.Forms.Button();
             this.buttonDivide = new System.Windows.Forms.Button();
             this.buttonPlus = new System.Windows.Forms.Button();
             this.buttonMinus = new System.Windows.Forms.Button();
+            this.textBox_memory = new System.Windows.Forms.TextBox();
+            this.buttonBackspace = new System.Windows.Forms.Button();
+            this.buttonEquals = new System.Windows.Forms.Button();
+            this.buttonCE = new System.Windows.Forms.Button();
+            this.buttonC = new System.Windows.Forms.Button();
             this.panelNumbers.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -219,6 +223,10 @@
             // 
             // panelNumbers
             // 
+            this.panelNumbers.Controls.Add(this.buttonBackspace);
+            this.panelNumbers.Controls.Add(this.buttonEquals);
+            this.panelNumbers.Controls.Add(this.buttonCE);
+            this.panelNumbers.Controls.Add(this.buttonC);
             this.panelNumbers.Controls.Add(this.buttonMulti);
             this.panelNumbers.Controls.Add(this.buttonDivide);
             this.panelNumbers.Controls.Add(this.buttonPlus);
@@ -237,19 +245,9 @@
             this.panelNumbers.Controls.Add(this.buttonSix);
             this.panelNumbers.Location = new System.Drawing.Point(23, 254);
             this.panelNumbers.Name = "panelNumbers";
-            this.panelNumbers.Size = new System.Drawing.Size(598, 367);
+            this.panelNumbers.Size = new System.Drawing.Size(814, 367);
             this.panelNumbers.TabIndex = 15;
             this.panelNumbers.Visible = false;
-            // 
-            // textBox_memory
-            // 
-            this.textBox_memory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_memory.Location = new System.Drawing.Point(48, 26);
-            this.textBox_memory.Name = "textBox_memory";
-            this.textBox_memory.ReadOnly = true;
-            this.textBox_memory.Size = new System.Drawing.Size(789, 44);
-            this.textBox_memory.TabIndex = 16;
-            this.textBox_memory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // buttonMulti
             // 
@@ -299,6 +297,67 @@
             this.buttonMinus.UseVisualStyleBackColor = true;
             this.buttonMinus.Click += new System.EventHandler(this.buttonMinus_Click);
             // 
+            // textBox_memory
+            // 
+            this.textBox_memory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_memory.Location = new System.Drawing.Point(48, 26);
+            this.textBox_memory.Name = "textBox_memory";
+            this.textBox_memory.ReadOnly = true;
+            this.textBox_memory.Size = new System.Drawing.Size(789, 44);
+            this.textBox_memory.TabIndex = 16;
+            this.textBox_memory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // buttonBackspace
+            // 
+            this.buttonBackspace.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBackspace.ForeColor = System.Drawing.Color.Red;
+            this.buttonBackspace.Location = new System.Drawing.Point(682, 195);
+            this.buttonBackspace.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonBackspace.Name = "buttonBackspace";
+            this.buttonBackspace.Size = new System.Drawing.Size(79, 53);
+            this.buttonBackspace.TabIndex = 20;
+            this.buttonBackspace.Text = "<-";
+            this.buttonBackspace.UseVisualStyleBackColor = true;
+            this.buttonBackspace.Click += new System.EventHandler(this.buttonBackspace_Click);
+            // 
+            // buttonEquals
+            // 
+            this.buttonEquals.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEquals.Location = new System.Drawing.Point(682, 285);
+            this.buttonEquals.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonEquals.Name = "buttonEquals";
+            this.buttonEquals.Size = new System.Drawing.Size(79, 53);
+            this.buttonEquals.TabIndex = 19;
+            this.buttonEquals.Text = "=";
+            this.buttonEquals.UseVisualStyleBackColor = true;
+            this.buttonEquals.Click += new System.EventHandler(this.buttonEquals_Click);
+            // 
+            // buttonCE
+            // 
+            this.buttonCE.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCE.ForeColor = System.Drawing.Color.Red;
+            this.buttonCE.Location = new System.Drawing.Point(682, 16);
+            this.buttonCE.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCE.Name = "buttonCE";
+            this.buttonCE.Size = new System.Drawing.Size(79, 53);
+            this.buttonCE.TabIndex = 22;
+            this.buttonCE.Text = "CE";
+            this.buttonCE.UseVisualStyleBackColor = true;
+            this.buttonCE.Click += new System.EventHandler(this.buttonCE_Click);
+            // 
+            // buttonC
+            // 
+            this.buttonC.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonC.ForeColor = System.Drawing.Color.Red;
+            this.buttonC.Location = new System.Drawing.Point(682, 106);
+            this.buttonC.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonC.Name = "buttonC";
+            this.buttonC.Size = new System.Drawing.Size(79, 53);
+            this.buttonC.TabIndex = 21;
+            this.buttonC.Text = "C";
+            this.buttonC.UseVisualStyleBackColor = true;
+            this.buttonC.Click += new System.EventHandler(this.buttonC_Click);
+            // 
             // SimpleCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -343,6 +402,10 @@
         private System.Windows.Forms.Button buttonDivide;
         private System.Windows.Forms.Button buttonPlus;
         private System.Windows.Forms.Button buttonMinus;
+        private System.Windows.Forms.Button buttonBackspace;
+        private System.Windows.Forms.Button buttonEquals;
+        private System.Windows.Forms.Button buttonCE;
+        private System.Windows.Forms.Button buttonC;
     }
 }
 

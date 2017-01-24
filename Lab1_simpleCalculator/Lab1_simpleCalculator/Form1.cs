@@ -39,7 +39,7 @@ namespace Lab1_simpleCalculator
 
         private void Calculator_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.OemBackslash)
+            if (e.KeyCode == Keys.Back)
             {
                 if (textBox_number.Text.Length > 0)
                 {
@@ -94,6 +94,22 @@ namespace Lab1_simpleCalculator
             {
                 if (!(textBox_number.Text.Contains(".")))
                     textBox_number.Text += ".";
+            }
+            if (e.KeyChar == '+')
+            {
+                
+            }
+            if (e.KeyChar == '-')
+            {
+
+            }
+            if (e.KeyChar == '*')
+            {
+
+            }
+            if (e.KeyChar == '/')
+            {
+
             }
         }
 
@@ -195,6 +211,31 @@ namespace Lab1_simpleCalculator
         private void buttonPlus_Click(object sender, EventArgs e)
         {
             SendKeys.Send("+");
+        }
+
+        private void buttonCE_Click(object sender, EventArgs e)
+        {
+            textBox_number.Text = string.Empty;
+        }
+
+        private void buttonEquals_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonBackspace_Click(object sender, EventArgs e)
+        {
+            if (textBox_number.Text.Length > 0)
+            {
+                textBox_number.Text = textBox_number.Text.Substring(0, textBox_number.Text.Length - 1);
+            }
+        }
+
+        private void buttonC_Click(object sender, EventArgs e)
+        {
+            textBox_number.Text = string.Empty;
+            operand1 = string.Empty;
+            operand2 = string.Empty;
         }
 
         private void buttonMinus_Click(object sender, EventArgs e)
