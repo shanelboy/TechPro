@@ -18,12 +18,15 @@ namespace Lab1_simpleCalculator
     /// Date: Jan 23, 2017
     /// Updated by:
     /// Date:
+    /// 
+    /// Note: we couldn't figure out the logic to enter multiple operations 
+    ///     (store the previous operation and answer in memory). There are many logic errors.
     /// </summary>
     public partial class SimpleCalculator : Form
     {
         string input = string.Empty;
-        string operand1 ="0", operand2="0";
-        char operation, prev_operation='+';
+        string operand1 = "0", operand2 = "0";
+        char operation, prev_operation = '+';
         double result = 0;
 
         public SimpleCalculator()
@@ -56,44 +59,46 @@ namespace Lab1_simpleCalculator
         {
             if (operation == '=')
             {
-                operand2 = textBox_number.Text;
-                textBox_number.Text = string.Empty;
-                textBox_memory.Text = operand2;
+                if (e == '=')
+                    return;
+                else if (e == '+' || e == '-' || e == '*' || e == '/')
+                {
+                    textBox_memory.Text = operand2 + " " + e + " ";
+                    textBox_number.Text = string.Empty;
+                    return;
+                }              
             }
 
-            if (e == '+' || e == '-' || e == '*' || e == '/' || e == '=')
+            if (e == '+' || e == '-' || e == '*' || e == '/')
             {
                 if (textBox_number.Text == string.Empty)
                 {
                     return;
                 }
                 textBox_memory.Text += textBox_number.Text;
+                operand1 = textBox_number.Text;
             }
 
             if (e == '+')
             {
-                operand1 = textBox_number.Text;
                 operation = '+';
                 textBox_memory.Text += " + ";
                 textBox_number.Text = string.Empty;
             }
             else if (e == '-')
             {
-                operand1 = textBox_number.Text;
                 operation = '-';
                 textBox_memory.Text += " - ";
                 textBox_number.Text = string.Empty;
             }
             else if (e == '*')
             {
-                operand1 = textBox_number.Text;
                 operation = '*';
                 textBox_memory.Text += " * ";
                 textBox_number.Text = string.Empty;
             }
             else if (e == '/')
             {
-                operand1 = textBox_number.Text;
                 operation = '/';
                 textBox_memory.Text += " / ";
                 textBox_number.Text = string.Empty;
