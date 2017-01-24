@@ -48,69 +48,127 @@ namespace Lab1_simpleCalculator
             }
         }
 
+        /// <summary>
+        /// check the operation
+        /// </summary>
+        /// <param name="e"></param>
+        public void checkOperation(char e)
+        {
+            if (e == '+')
+            {
+                operand1 = textBox_number.Text;
+                operation = '+';
+                textBox_number.Text = string.Empty;
+            }
+            if (e == '-')
+            {
+                operand1 = textBox_number.Text;
+                operation = '-';
+                textBox_number.Text = string.Empty;
+            }
+            if (e == '*')
+            {
+                operand1 = textBox_number.Text;
+                operation = '*';
+                textBox_number.Text = string.Empty;
+            }
+            if (e == '/')
+            {
+                operand1 = textBox_number.Text;
+                operation = '/';
+                textBox_number.Text = string.Empty;
+            }
+            if (e == '=')
+            {
+                operand2 = textBox_number.Text;
+                double num1, num2;
+                double.TryParse(operand1, out num1);
+                double.TryParse(operand2, out num2);
+
+                if (operation == '+')
+                {
+                    result = num1 + num2;
+                    textBox_number.Text = result.ToString();
+                }
+                else if (operation == '-')
+                {
+                    result = num1 - num2;
+                    textBox_number.Text = result.ToString();
+                }
+                else if (operation == '*')
+                {
+                    result = num1 * num2;
+                    textBox_number.Text = result.ToString();
+                }
+                else if (operation == '/')
+                {
+                    if (num2 != 0)
+                    {
+                        result = num1 / num2;
+                        textBox_number.Text = result.ToString();
+                    }
+                    else
+                    {
+                        textBox_number.Text = "DIV/Zero!";
+                    }
+
+                }
+            }
+        }
+
         private void Calculator_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '0')
             {
                 textBox_number.Text += "0";
             }
-            if (e.KeyChar == '1')
+            else if (e.KeyChar == '1')
             {
                 textBox_number.Text += "1";
             }
-            if (e.KeyChar == '2')
+            else if (e.KeyChar == '2')
             {
                 textBox_number.Text += "2";
             }
-            if (e.KeyChar == '3')
+            else if (e.KeyChar == '3')
             {
                 textBox_number.Text += "3";
             }
-            if (e.KeyChar == '4')
+            else if (e.KeyChar == '4')
             {
                 textBox_number.Text += "4";
             }
-            if (e.KeyChar == '5')
+            else if (e.KeyChar == '5')
             {
                 textBox_number.Text += "5";
             }
-            if (e.KeyChar == '6')
+            else if (e.KeyChar == '6')
             {
                 textBox_number.Text += "6";
             }
-            if (e.KeyChar == '7')
+            else if (e.KeyChar == '7')
             {
                 textBox_number.Text += "7";
             }
-            if (e.KeyChar == '8')
+            else if (e.KeyChar == '8')
             {
                 textBox_number.Text += "8";
             }
-            if (e.KeyChar == '9')
+            else if (e.KeyChar == '9')
             {
                 textBox_number.Text += "9";
             }
-            if (e.KeyChar == '.')
+            else if (e.KeyChar == '.')
             {
                 if (!(textBox_number.Text.Contains(".")))
                     textBox_number.Text += ".";
             }
-            if (e.KeyChar == '+')
+            else
             {
-                
+                checkOperation(e.KeyChar);
             }
-            if (e.KeyChar == '-')
-            {
 
-            }
-            if (e.KeyChar == '*')
-            {
 
-            }
-            if (e.KeyChar == '/')
-            {
-
-            }
         }
 
         private void buttonOn_Click(object sender, EventArgs e)
@@ -202,29 +260,34 @@ namespace Lab1_simpleCalculator
             }
         }
 
+        private void buttonMinus_Click(object sender, EventArgs e)
+        {
+            checkOperation('-');
+        }
+
         private void buttonDivide_Click(object sender, EventArgs e)
         {
-            SendKeys.Send("/");
+            checkOperation('/');
         }
 
         private void buttonMulti_Click(object sender, EventArgs e)
         {
-            SendKeys.Send("*");
+            checkOperation('*');
         }
 
         private void buttonPlus_Click(object sender, EventArgs e)
         {
-            SendKeys.Send("+");
-        }
-
-        private void buttonCE_Click(object sender, EventArgs e)
-        {
-            SendKeys.Send("sqrt");
+            checkOperation('+');
         }
 
         private void buttonEquals_Click(object sender, EventArgs e)
         {
+            checkOperation('=');
+        }
 
+        private void buttonCE_Click(object sender, EventArgs e)
+        {
+            textBox_number.Text = string.Empty;
         }
 
         private void buttonBackspace_Click(object sender, EventArgs e)
@@ -242,34 +305,5 @@ namespace Lab1_simpleCalculator
             operand2 = string.Empty;
         }
 
-        private void buttonMinus_Click(object sender, EventArgs e)
-        {
-            SendKeys.Send("-");
-        }
-
-        private void squared_Click(object sender, EventArgs e)
-        {
-            SendKeys.Send("-");
-        }
-
-        private void buttonDivideX_Click(object sender, EventArgs e)
-        {
-            SendKeys.Send("-");
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            SendKeys.Send("-");
-        }
-
-        private void buttonSQRT_Click(object sender, EventArgs e)
-        {
-            SendKeys.Send("-");
-        }
-
-        private void module_Click(object sender, EventArgs e)
-        {
-            SendKeys.Send("-");
-        }
     }
 }
