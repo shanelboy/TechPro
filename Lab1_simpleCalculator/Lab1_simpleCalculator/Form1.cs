@@ -11,19 +11,19 @@ using System.Windows.Forms;
 namespace Lab1_simpleCalculator
 {
     /// <summary>
-    /// Purpose:
-    /// Input:
-    /// Output:
-    /// Author:
-    /// Date:
+    /// Purpose: demestrate a simple calculator
+    /// Input: button clicks & keyboard input 0-9 and math operations
+    /// Output: display input & calculation result on the UI
+    /// Author: Bill Xue, Sean Lee
+    /// Date: Jan 23, 2017
     /// Updated by:
     /// Date:
     /// </summary>
     public partial class SimpleCalculator : Form
     {
         string input = string.Empty;
-        string operand1, operand2;
-        char operation;
+        string operand1 ="0", operand2="0";
+        char operation, prev_operation='+';
         double result = 0;
 
         public SimpleCalculator()
@@ -54,65 +54,93 @@ namespace Lab1_simpleCalculator
         /// <param name="e"></param>
         public void checkOperation(char e)
         {
+            if (operation == '=')
+            {
+                operand2 = textBox_number.Text;
+                textBox_number.Text = string.Empty;
+                textBox_memory.Text = operand2;
+            }
+
+            if (e == '+' || e == '-' || e == '*' || e == '/' || e == '=')
+            {
+                if (textBox_number.Text == string.Empty)
+                {
+                    return;
+                }
+                textBox_memory.Text += textBox_number.Text;
+            }
+
             if (e == '+')
             {
                 operand1 = textBox_number.Text;
                 operation = '+';
+                textBox_memory.Text += " + ";
                 textBox_number.Text = string.Empty;
             }
-            if (e == '-')
+            else if (e == '-')
             {
                 operand1 = textBox_number.Text;
                 operation = '-';
+                textBox_memory.Text += " - ";
                 textBox_number.Text = string.Empty;
             }
-            if (e == '*')
+            else if (e == '*')
             {
                 operand1 = textBox_number.Text;
                 operation = '*';
+                textBox_memory.Text += " * ";
                 textBox_number.Text = string.Empty;
             }
-            if (e == '/')
+            else if (e == '/')
             {
                 operand1 = textBox_number.Text;
                 operation = '/';
+                textBox_memory.Text += " / ";
                 textBox_number.Text = string.Empty;
             }
-            if (e == '=')
-            {
-                operand2 = textBox_number.Text;
-                double num1, num2;
-                double.TryParse(operand1, out num1);
-                double.TryParse(operand2, out num2);
 
-                if (operation == '+')
+            double num1, num2;
+            double.TryParse(operand1, out num1);
+            double.TryParse(operand2, out num2);
+
+            if (prev_operation == '+')
+            {
+                result = num1 + num2;
+                operand2 = result.ToString();
+            }
+            else if (prev_operation == '-')
+            {
+                result = num1 - num2;
+                operand2 = result.ToString();
+            }
+            else if (prev_operation == '*')
+            {
+                result = num1 * num2;
+                operand2 = result.ToString();
+            }
+            else if (prev_operation == '/')
+            {
+                if (num2 != 0)
                 {
-                    result = num1 + num2;
-                    textBox_number.Text = result.ToString();
+                    result = num1 / num2;
+                    operand2 = result.ToString();
                 }
-                else if (operation == '-')
+                else
                 {
-                    result = num1 - num2;
-                    textBox_number.Text = result.ToString();
-                }
-                else if (operation == '*')
-                {
-                    result = num1 * num2;
-                    textBox_number.Text = result.ToString();
-                }
-                else if (operation == '/')
-                {
-                    if (num2 != 0)
-                    {
-                        result = num1 / num2;
-                        textBox_number.Text = result.ToString();
-                    }
-                    else
-                    {
-                        textBox_number.Text = "DIV/Zero!";
-                    }
+                    textBox_number.Text = "DIV/Zero!";
+                    textBox_memory.Text = string.Empty;
+                    operand1 = string.Empty;
+                    operand2 = string.Empty;
                 }
             }
+
+            if (e == '=')
+            {
+                textBox_number.Text = operand2;
+                operation = '=';
+            }
+            prev_operation = operation;
+
         }
 
         /// <summary>
@@ -123,86 +151,63 @@ namespace Lab1_simpleCalculator
 
         private void Calculator_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (operation == '=')
+            {
+                operation = '+';
+                textBox_number.Text = string.Empty;
+                textBox_memory.Text = string.Empty;
+            }
             if (e.KeyChar == '0')
             {
                 textBox_number.Text += "0";
-                textBox_memory.Text += "0";
             }
             else if (e.KeyChar == '1')
             {
                 textBox_number.Text += "1";
-                textBox_memory.Text += "1";
             }
             else if (e.KeyChar == '2')
             {
                 textBox_number.Text += "2";
-                textBox_memory.Text += "2";
             }
             else if (e.KeyChar == '3')
             {
                 textBox_number.Text += "3";
-                textBox_memory.Text += "3";
             }
             else if (e.KeyChar == '4')
             {
                 textBox_number.Text += "4";
-                textBox_memory.Text += "4";
             }
             else if (e.KeyChar == '5')
             {
                 textBox_number.Text += "5";
-                textBox_memory.Text += "5";
             }
             else if (e.KeyChar == '6')
             {
                 textBox_number.Text += "6";
-                textBox_memory.Text += "6";
             }
             else if (e.KeyChar == '7')
             {
                 textBox_number.Text += "7";
-                textBox_memory.Text += "7";
             }
             else if (e.KeyChar == '8')
             {
                 textBox_number.Text += "8";
-                textBox_memory.Text += "8";
             }
             else if (e.KeyChar == '9')
             {
                 textBox_number.Text += "9";
-                textBox_memory.Text += "9";
-            }
-            else if (e.KeyChar == '+')
-            {
-                textBox_memory.Text += "+";
-            }
-            else if (e.KeyChar == '-')
-            {
-                textBox_memory.Text += "-";
-            }
-            else if (e.KeyChar == '*')
-            {
-                textBox_memory.Text += "*";
-            }
-            else if (e.KeyChar == '/')
-            {
-                textBox_memory.Text += "/";
             }
             else if (e.KeyChar == '.')
             {
                 if (!(textBox_number.Text.Contains(".")))
                 {
                     textBox_number.Text += ".";
-                    textBox_memory.Text += ".";
                 }
             }
             else
             {
                 checkOperation(e.KeyChar);
             }
-
-
         }
 
         /// <summary>
@@ -360,7 +365,6 @@ namespace Lab1_simpleCalculator
         /// <param name="e"></param>
         private void buttonMinus_Click(object sender, EventArgs e)
         {
-            SendKeys.Send("-");
             checkOperation('-');
         }
         /// <summary>
@@ -370,7 +374,6 @@ namespace Lab1_simpleCalculator
         /// <param name="e"></param>
         private void buttonDivide_Click(object sender, EventArgs e)
         {
-            SendKeys.Send("/");
             checkOperation('/');
         }
         /// <summary>
@@ -380,7 +383,6 @@ namespace Lab1_simpleCalculator
         /// <param name="e"></param>
         private void buttonMulti_Click(object sender, EventArgs e)
         {
-            SendKeys.Send("*");
             checkOperation('*');
         }
         /// <summary>
@@ -420,7 +422,6 @@ namespace Lab1_simpleCalculator
         /// <param name="e"></param>
         private void buttonPlus_Click_1(object sender, EventArgs e)
         {
-            SendKeys.Send("+");
             checkOperation('+');
         }
         /// <summary>
@@ -431,8 +432,11 @@ namespace Lab1_simpleCalculator
         private void buttonC_Click(object sender, EventArgs e)
         {
             textBox_number.Text = string.Empty;
+            textBox_memory.Text = string.Empty;
             operand1 = string.Empty;
             operand2 = string.Empty;
+            operation = '+';
+            prev_operation = '+';
         }
 
     }
