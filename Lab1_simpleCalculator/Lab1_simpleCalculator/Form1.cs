@@ -242,5 +242,35 @@ namespace Lab1_simpleCalculator
         {
             SendKeys.Send("-");
         }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("-");
+        }
+
+        private void squared_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("-");
+        }
+
+        private void buttonDivideX_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("-");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("-");
+        }
+
+        private void buttonSQRT_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("-");
+        }
+
+        private void module_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("-");
+        }
     }
 }
