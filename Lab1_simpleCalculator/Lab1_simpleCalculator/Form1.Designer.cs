@@ -304,7 +304,7 @@
             this.buttonClear.TabIndex = 23;
             this.buttonClear.Text = "CE";
             this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            this.buttonClear.Click += new System.EventHandler(this.buttonC_Click);
             // 
             // buttonMulti
             // 

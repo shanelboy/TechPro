@@ -247,11 +247,6 @@ namespace Lab1_simpleCalculator
             SendKeys.Send("-");
         }
 
-        private void buttonClear_Click(object sender, EventArgs e)
-        {
-            SendKeys.Send("-");
-        }
-
         private void squared_Click(object sender, EventArgs e)
         {
             SendKeys.Send("-");
