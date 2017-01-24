@@ -285,7 +285,7 @@
             this.buttonBackSpc.TabIndex = 25;
             this.buttonBackSpc.Text = "<-";
             this.buttonBackSpc.UseVisualStyleBackColor = true;
-            this.buttonBackSpc.Click += new System.EventHandler(this.buttonBackSpc_Click);
+            this.buttonBackSpc.Click += new System.EventHandler(this.buttonBackspace_Click);
             // 
             // buttonClearAll
             // 
@@ -297,7 +297,7 @@
             this.buttonClearAll.TabIndex = 24;
             this.buttonClearAll.Text = "C";
             this.buttonClearAll.UseVisualStyleBackColor = true;
-            this.buttonClearAll.Click += new System.EventHandler(this.buttonClearAll_Click);
+            this.buttonClearAll.Click += new System.EventHandler(this.buttonC_Click);
             // 
             // buttonClear
             // 
