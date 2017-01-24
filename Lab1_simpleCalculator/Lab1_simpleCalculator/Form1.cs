@@ -111,7 +111,6 @@ namespace Lab1_simpleCalculator
                     {
                         textBox_number.Text = "DIV/Zero!";
                     }
-
                 }
             }
         }
