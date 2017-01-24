@@ -215,7 +215,7 @@ namespace Lab1_simpleCalculator
 
         private void buttonCE_Click(object sender, EventArgs e)
         {
-            textBox_number.Text = string.Empty;
+            SendKeys.Send("sqrt");
         }
 
         private void buttonEquals_Click(object sender, EventArgs e)
