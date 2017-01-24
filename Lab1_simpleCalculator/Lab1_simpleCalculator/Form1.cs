@@ -95,18 +95,39 @@ namespace Lab1_simpleCalculator
                 if (!(textBox_number.Text.Contains(".")))
                     textBox_number.Text += ".";
             }
+            if (e.KeyChar == '*')
+            {
+                textBox_number.Text += "*";
+            }
+            if (e.KeyChar == '+')
+            {
+                textBox_number.Text += "+";
+            }
+            if (e.KeyChar == '-')
+            {
+                textBox_number.Text += "-";
+            }
+            if (e.KeyChar == '/')
+            {
+                textBox_number.Text += "/";
+            }
         }
 
         private void buttonOn_Click(object sender, EventArgs e)
         {
             if (buttonOn.Text == "ON")
             {
+                textBox_number.Clear();
                 buttonOn.Text = "OFF";
+                pictureBox1.Visible = false;
+                pictureBox2.Visible = true;
                 panelNumbers.Visible = false;
             }
             else
             {
                 buttonOn.Text = "ON";
+                pictureBox1.Visible = true;
+                pictureBox2.Visible = false;
                 panelNumbers.Visible = true;
             }
         }
@@ -195,6 +216,48 @@ namespace Lab1_simpleCalculator
         private void buttonPlus_Click(object sender, EventArgs e)
         {
             SendKeys.Send("+");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e) {}
+
+        private void squared_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("sqrt");
+        }
+
+        private void buttonSQRT_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("sqrt");
+        }
+
+        private void module_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("%");
+        }
+
+        private void buttonDivideX_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("/x");
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonClearAll_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonBackSpc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonEquals_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void buttonMinus_Click(object sender, EventArgs e)
