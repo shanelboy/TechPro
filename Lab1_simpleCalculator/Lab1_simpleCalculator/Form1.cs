@@ -280,9 +280,9 @@ namespace Lab1_simpleCalculator
             checkOperation('+');
         }
 
-        private void buttonEquals_Click(object sender, EventArgs e)
+        private void buttonCE_Click(object sender, EventArgs e)
         {
-            checkOperation('=');
+            SendKeys.Send("sqrt");
         }
 
         private void buttonCE_Click(object sender, EventArgs e)
@@ -304,6 +304,12 @@ namespace Lab1_simpleCalculator
             operand1 = string.Empty;
             operand2 = string.Empty;
         }
+
+        private void buttonMinus_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("-");
+        }
+        private void pictureBox1_Click(object sender, EventArgs e) {}
 
     }
 }
