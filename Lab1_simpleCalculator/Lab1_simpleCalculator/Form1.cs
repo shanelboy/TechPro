@@ -111,7 +111,6 @@ namespace Lab1_simpleCalculator
                     {
                         textBox_number.Text = "DIV/Zero!";
                     }
-
                 }
             }
         }
@@ -121,47 +120,76 @@ namespace Lab1_simpleCalculator
             if (e.KeyChar == '0')
             {
                 textBox_number.Text += "0";
+                textBox_memory.Text += "0";
             }
             else if (e.KeyChar == '1')
             {
                 textBox_number.Text += "1";
+                textBox_memory.Text += "1";
             }
             else if (e.KeyChar == '2')
             {
                 textBox_number.Text += "2";
+                textBox_memory.Text += "2";
             }
             else if (e.KeyChar == '3')
             {
                 textBox_number.Text += "3";
+                textBox_memory.Text += "3";
             }
             else if (e.KeyChar == '4')
             {
                 textBox_number.Text += "4";
+                textBox_memory.Text += "4";
             }
             else if (e.KeyChar == '5')
             {
                 textBox_number.Text += "5";
+                textBox_memory.Text += "5";
             }
             else if (e.KeyChar == '6')
             {
                 textBox_number.Text += "6";
+                textBox_memory.Text += "6";
             }
             else if (e.KeyChar == '7')
             {
                 textBox_number.Text += "7";
+                textBox_memory.Text += "7";
             }
             else if (e.KeyChar == '8')
             {
                 textBox_number.Text += "8";
+                textBox_memory.Text += "8";
             }
             else if (e.KeyChar == '9')
             {
                 textBox_number.Text += "9";
+                textBox_memory.Text += "9";
+            }
+            else if (e.KeyChar == '+')
+            {
+                textBox_memory.Text += "+";
+            }
+            else if (e.KeyChar == '-')
+            {
+                textBox_memory.Text += "-";
+            }
+            else if (e.KeyChar == '*')
+            {
+                textBox_memory.Text += "*";
+            }
+            else if (e.KeyChar == '/')
+            {
+                textBox_memory.Text += "/";
             }
             else if (e.KeyChar == '.')
             {
                 if (!(textBox_number.Text.Contains(".")))
+                {
                     textBox_number.Text += ".";
+                    textBox_memory.Text += ".";
+                }
             }
             else
             {
@@ -176,15 +204,17 @@ namespace Lab1_simpleCalculator
             if (buttonOn.Text == "ON")
             {
                 buttonOn.Text = "OFF";
+                textBox_memory.Clear();
+                textBox_number.Clear();
                 pictureBox1.Visible = false;
-                pictureBox2.Visible = true;
                 panelNumbers.Visible = false;
             }
             else
             {
                 buttonOn.Text = "ON";
+                textBox_memory.Clear();
+                textBox_number.Clear();
                 pictureBox1.Visible = true;
-                pictureBox2.Visible = false;
                 panelNumbers.Visible = true;
             }
         }
@@ -249,45 +279,47 @@ namespace Lab1_simpleCalculator
             if (textBox_number.Text.Substring(0, 1) == "-")
             {
                 textBox_number.Text = "+" + textBox_number.Text.Substring(1, textBox_number.Text.Length - 1);
+                textBox_memory.Text = "+" + textBox_memory.Text.Substring(1, textBox_memory.Text.Length - 1);
             }
             else if (textBox_number.Text.Substring(0, 1) == "+")
             {
                 textBox_number.Text = "-" + textBox_number.Text.Substring(1, textBox_number.Text.Length - 1);
+                textBox_memory.Text = "-" + textBox_memory.Text.Substring(1, textBox_memory.Text.Length - 1);
             }
             else
             {
                 textBox_number.Text = "-" + textBox_number.Text;
+                textBox_memory.Text = "-" + textBox_memory.Text;
             }
         }
 
         private void buttonMinus_Click(object sender, EventArgs e)
         {
+            SendKeys.Send("-");
             checkOperation('-');
         }
 
         private void buttonDivide_Click(object sender, EventArgs e)
         {
+            SendKeys.Send("/");
             checkOperation('/');
         }
 
         private void buttonMulti_Click(object sender, EventArgs e)
         {
+            SendKeys.Send("*");
             checkOperation('*');
         }
 
         private void buttonPlus_Click(object sender, EventArgs e)
         {
+            SendKeys.Send("+");
             checkOperation('+');
         }
 
-        private void buttonCE_Click(object sender, EventArgs e)
+        private void buttonEquals_Click(object sender, EventArgs e)
         {
-            SendKeys.Send("sqrt");
-        }
-
-        private void buttonCE_Click(object sender, EventArgs e)
-        {
-            textBox_number.Text = string.Empty;
+            checkOperation('=');
         }
 
         private void buttonBackspace_Click(object sender, EventArgs e)
@@ -298,18 +330,17 @@ namespace Lab1_simpleCalculator
             }
         }
 
+        private void buttonCE_Click_1(object sender, EventArgs e)
+        {
+            textBox_number.Text = string.Empty;
+        }
+
         private void buttonC_Click(object sender, EventArgs e)
         {
             textBox_number.Text = string.Empty;
             operand1 = string.Empty;
             operand2 = string.Empty;
         }
-
-        private void buttonMinus_Click(object sender, EventArgs e)
-        {
-            SendKeys.Send("-");
-        }
-        private void pictureBox1_Click(object sender, EventArgs e) {}
 
     }
 }
