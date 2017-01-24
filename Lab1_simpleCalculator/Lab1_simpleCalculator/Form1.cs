@@ -39,7 +39,7 @@ namespace Lab1_simpleCalculator
 
         private void Calculator_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.OemBackslash)
+            if (e.KeyCode == Keys.Back)
             {
                 if (textBox_number.Text.Length > 0)
                 {
@@ -95,21 +95,21 @@ namespace Lab1_simpleCalculator
                 if (!(textBox_number.Text.Contains(".")))
                     textBox_number.Text += ".";
             }
-            if (e.KeyChar == '*')
-            {
-                textBox_number.Text += "*";
-            }
             if (e.KeyChar == '+')
             {
-                textBox_number.Text += "+";
+                
             }
             if (e.KeyChar == '-')
             {
-                textBox_number.Text += "-";
+
+            }
+            if (e.KeyChar == '*')
+            {
+
             }
             if (e.KeyChar == '/')
             {
-                textBox_number.Text += "/";
+
             }
         }
 
@@ -117,17 +117,12 @@ namespace Lab1_simpleCalculator
         {
             if (buttonOn.Text == "ON")
             {
-                textBox_number.Clear();
                 buttonOn.Text = "OFF";
-                pictureBox1.Visible = false;
-                pictureBox2.Visible = true;
                 panelNumbers.Visible = false;
             }
             else
             {
                 buttonOn.Text = "ON";
-                pictureBox1.Visible = true;
-                pictureBox2.Visible = false;
                 panelNumbers.Visible = true;
             }
         }
@@ -218,46 +213,29 @@ namespace Lab1_simpleCalculator
             SendKeys.Send("+");
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e) {}
-
-        private void squared_Click(object sender, EventArgs e)
+        private void buttonCE_Click(object sender, EventArgs e)
         {
-            SendKeys.Send("^2");
-        }
-
-        private void buttonSQRT_Click(object sender, EventArgs e)
-        {
-            SendKeys.Send("sqrt");
-        }
-
-        private void module_Click(object sender, EventArgs e)
-        {
-            SendKeys.Send("%");
-        }
-
-        private void buttonDivideX_Click(object sender, EventArgs e)
-        {
-            SendKeys.Send("/x");
-        }
-
-        private void buttonClear_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonClearAll_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonBackSpc_Click(object sender, EventArgs e)
-        {
-
+            textBox_number.Text = string.Empty;
         }
 
         private void buttonEquals_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonBackspace_Click(object sender, EventArgs e)
+        {
+            if (textBox_number.Text.Length > 0)
+            {
+                textBox_number.Text = textBox_number.Text.Substring(0, textBox_number.Text.Length - 1);
+            }
+        }
+
+        private void buttonC_Click(object sender, EventArgs e)
+        {
+            textBox_number.Text = string.Empty;
+            operand1 = string.Empty;
+            operand2 = string.Empty;
         }
 
         private void buttonMinus_Click(object sender, EventArgs e)
