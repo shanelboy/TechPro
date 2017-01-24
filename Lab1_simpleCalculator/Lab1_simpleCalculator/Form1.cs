@@ -118,11 +118,15 @@ namespace Lab1_simpleCalculator
             if (buttonOn.Text == "ON")
             {
                 buttonOn.Text = "OFF";
+                pictureBox1.Visible = false;
+                pictureBox2.Visible = true;
                 panelNumbers.Visible = false;
             }
             else
             {
                 buttonOn.Text = "ON";
+                pictureBox1.Visible = true;
+                pictureBox2.Visible = false;
                 panelNumbers.Visible = true;
             }
         }
