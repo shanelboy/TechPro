@@ -43,6 +43,11 @@
             this.buttonFive = new System.Windows.Forms.Button();
             this.buttonFour = new System.Windows.Forms.Button();
             this.panelNumbers = new System.Windows.Forms.Panel();
+            this.textBox_memory = new System.Windows.Forms.TextBox();
+            this.buttonMulti = new System.Windows.Forms.Button();
+            this.buttonDivide = new System.Windows.Forms.Button();
+            this.buttonPlus = new System.Windows.Forms.Button();
+            this.buttonMinus = new System.Windows.Forms.Button();
             this.panelNumbers.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +66,7 @@
             // textBox_number
             // 
             this.textBox_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_number.Location = new System.Drawing.Point(50, 24);
+            this.textBox_number.Location = new System.Drawing.Point(48, 98);
             this.textBox_number.Name = "textBox_number";
             this.textBox_number.ReadOnly = true;
             this.textBox_number.Size = new System.Drawing.Size(789, 44);
@@ -71,7 +76,7 @@
             // buttonOn
             // 
             this.buttonOn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOn.Location = new System.Drawing.Point(50, 108);
+            this.buttonOn.Location = new System.Drawing.Point(48, 182);
             this.buttonOn.Margin = new System.Windows.Forms.Padding(2);
             this.buttonOn.Name = "buttonOn";
             this.buttonOn.Size = new System.Drawing.Size(111, 53);
@@ -90,6 +95,7 @@
             this.buttonDot.TabIndex = 4;
             this.buttonDot.Text = ".";
             this.buttonDot.UseVisualStyleBackColor = true;
+            this.buttonDot.Click += new System.EventHandler(this.buttonDot_Click);
             // 
             // buttonSign
             // 
@@ -101,6 +107,7 @@
             this.buttonSign.TabIndex = 5;
             this.buttonSign.Text = "+/-";
             this.buttonSign.UseVisualStyleBackColor = true;
+            this.buttonSign.Click += new System.EventHandler(this.buttonSign_Click);
             // 
             // buttonThree
             // 
@@ -212,6 +219,10 @@
             // 
             // panelNumbers
             // 
+            this.panelNumbers.Controls.Add(this.buttonMulti);
+            this.panelNumbers.Controls.Add(this.buttonDivide);
+            this.panelNumbers.Controls.Add(this.buttonPlus);
+            this.panelNumbers.Controls.Add(this.buttonMinus);
             this.panelNumbers.Controls.Add(this.buttonThree);
             this.panelNumbers.Controls.Add(this.buttonSign);
             this.panelNumbers.Controls.Add(this.buttonNine);
@@ -224,17 +235,76 @@
             this.panelNumbers.Controls.Add(this.buttonOne);
             this.panelNumbers.Controls.Add(this.buttonSeven);
             this.panelNumbers.Controls.Add(this.buttonSix);
-            this.panelNumbers.Location = new System.Drawing.Point(25, 180);
+            this.panelNumbers.Location = new System.Drawing.Point(23, 254);
             this.panelNumbers.Name = "panelNumbers";
-            this.panelNumbers.Size = new System.Drawing.Size(337, 367);
+            this.panelNumbers.Size = new System.Drawing.Size(598, 367);
             this.panelNumbers.TabIndex = 15;
             this.panelNumbers.Visible = false;
+            // 
+            // textBox_memory
+            // 
+            this.textBox_memory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_memory.Location = new System.Drawing.Point(48, 26);
+            this.textBox_memory.Name = "textBox_memory";
+            this.textBox_memory.ReadOnly = true;
+            this.textBox_memory.Size = new System.Drawing.Size(789, 44);
+            this.textBox_memory.TabIndex = 16;
+            this.textBox_memory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // buttonMulti
+            // 
+            this.buttonMulti.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMulti.Location = new System.Drawing.Point(418, 195);
+            this.buttonMulti.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonMulti.Name = "buttonMulti";
+            this.buttonMulti.Size = new System.Drawing.Size(79, 53);
+            this.buttonMulti.TabIndex = 16;
+            this.buttonMulti.Text = "*";
+            this.buttonMulti.UseVisualStyleBackColor = true;
+            this.buttonMulti.Click += new System.EventHandler(this.buttonMulti_Click);
+            // 
+            // buttonDivide
+            // 
+            this.buttonDivide.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDivide.Location = new System.Drawing.Point(418, 285);
+            this.buttonDivide.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDivide.Name = "buttonDivide";
+            this.buttonDivide.Size = new System.Drawing.Size(79, 53);
+            this.buttonDivide.TabIndex = 15;
+            this.buttonDivide.Text = "/";
+            this.buttonDivide.UseVisualStyleBackColor = true;
+            this.buttonDivide.Click += new System.EventHandler(this.buttonDivide_Click);
+            // 
+            // buttonPlus
+            // 
+            this.buttonPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPlus.Location = new System.Drawing.Point(418, 16);
+            this.buttonPlus.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonPlus.Name = "buttonPlus";
+            this.buttonPlus.Size = new System.Drawing.Size(79, 53);
+            this.buttonPlus.TabIndex = 18;
+            this.buttonPlus.Text = "+";
+            this.buttonPlus.UseVisualStyleBackColor = true;
+            this.buttonPlus.Click += new System.EventHandler(this.buttonPlus_Click);
+            // 
+            // buttonMinus
+            // 
+            this.buttonMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMinus.Location = new System.Drawing.Point(418, 106);
+            this.buttonMinus.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonMinus.Name = "buttonMinus";
+            this.buttonMinus.Size = new System.Drawing.Size(79, 53);
+            this.buttonMinus.TabIndex = 17;
+            this.buttonMinus.Text = "-";
+            this.buttonMinus.UseVisualStyleBackColor = true;
+            this.buttonMinus.Click += new System.EventHandler(this.buttonMinus_Click);
             // 
             // SimpleCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 599);
+            this.ClientSize = new System.Drawing.Size(905, 756);
+            this.Controls.Add(this.textBox_memory);
             this.Controls.Add(this.panelNumbers);
             this.Controls.Add(this.buttonOn);
             this.Controls.Add(this.textBox_number);
@@ -268,6 +338,11 @@
         private System.Windows.Forms.Button buttonFive;
         private System.Windows.Forms.Button buttonFour;
         private System.Windows.Forms.Panel panelNumbers;
+        private System.Windows.Forms.TextBox textBox_memory;
+        private System.Windows.Forms.Button buttonMulti;
+        private System.Windows.Forms.Button buttonDivide;
+        private System.Windows.Forms.Button buttonPlus;
+        private System.Windows.Forms.Button buttonMinus;
     }
 }
 

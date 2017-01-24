@@ -71,13 +71,18 @@ namespace Lab1_simpleCalculator
             {
                 textBox_number.Text += "7";
             }
-            if (e.KeyCode == Keys.D8)
+            if (e.KeyCode == Keys.NumPad8)
             {
                 textBox_number.Text += "8";
             }
             if (e.KeyCode == Keys.D9)
             {
                 textBox_number.Text += "9";
+            }
+            if (e.KeyCode == Keys.OemPeriod)
+            {
+                if (!(textBox_number.Text.Contains(".")))
+                    textBox_number.Text += ".";
             }
             if (e.KeyCode == Keys.Back)
             {
@@ -150,6 +155,53 @@ namespace Lab1_simpleCalculator
         private void buttonZero_Click(object sender, EventArgs e)
         {
             SendKeys.Send("0");
+        }
+
+        private void buttonDot_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send(".");
+        }
+
+        private void buttonSign_Click(object sender, EventArgs e)
+        {
+            if (textBox_number.Text.Substring(0, 1) == "-")
+            {
+                textBox_number.Text = "+" + textBox_number.Text.Substring(1, textBox_number.Text.Length - 1);
+            }
+            else if (textBox_number.Text.Substring(0, 1) == "+")
+            {
+                textBox_number.Text = "-" + textBox_number.Text.Substring(1, textBox_number.Text.Length - 1);
+            }
+            else
+            {
+                textBox_number.Text = "-" + textBox_number.Text;
+            }
+        }
+
+        private void buttonDivide_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("/");
+        }
+        /// <summary>
+        /// I couldn't figure out how to differentiate "*" with "8" when sending keys,
+        /// so I decide to implement all the operator seperately without sending the keys to key event handler.
+        /// -Bill
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonMulti_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("*");
+        }
+
+        private void buttonPlus_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("+");
+        }
+
+        private void buttonMinus_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("-");
         }
     }
 }
