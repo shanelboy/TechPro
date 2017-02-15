@@ -24,14 +24,16 @@ namespace Lab1_simpleCalculator
     /// </summary>
     public partial class SimpleCalculator : Form
     {
+        
         string input = string.Empty;
         string operand1 = "0", operand2 = "0";
         char operation, prev_operation = '+';
         double result = 0;
-
+        
         public SimpleCalculator()
         {
             InitializeComponent();
+            Helper helper = new Helper();
         }
 
         private void Calculator_Load(object sender, EventArgs e)
@@ -420,6 +422,7 @@ namespace Lab1_simpleCalculator
         {
             textBox_number.Text = string.Empty;
         }
+
         /// <summary>
         /// button for plus operand
         /// </summary>
@@ -429,6 +432,7 @@ namespace Lab1_simpleCalculator
         {
             checkOperation('+');
         }
+
         /// <summary>
         /// button for clear all
         /// </summary>
