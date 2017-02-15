@@ -4,6 +4,11 @@ using Lab1_simpleCalculator;
 
 namespace UnitTestProject1
 {
+    /// <summary>
+    /// purpose: unit tests for calculations
+    /// Author: Sean Lee, Bill Xue
+    /// Date: Feb 14, 2017
+    /// </summary>
     [TestClass]
     public class CalculatorTests
     {
